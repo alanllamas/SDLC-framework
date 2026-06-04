@@ -1,0 +1,27 @@
+# ==============================================================================
+# ENGINE CORE: GLOBAL HISTORY LEDGER ENTRY TEMPLATE
+# Parsed, populated, and appended exclusively by the Librarian kernel.
+# ==============================================================================
+
+- transaction_id: "TX_YYYY_XXXXX"
+  timestamp: "YYYY-MM-DDTHH:MM:SSZ"
+  event_type: "[CREATION | SUPERSESSION | DEPRECATION | TQUERY_RESOLUTION]"
+  
+  root_causality:
+    originating_agent: "[AGENT_ROLE]"
+    target_branch: "proposal/[DOC_ID]"
+  
+  artifact_state:
+    id: "[DOC_ID]"
+    file_path: "/governance/[dir]/[filename].md"
+    current_status: "[DRAFT | REVIEW | AUTHORIZED | DEPRECATED]"
+  
+  traceability_chain:
+    supersedes_file_id: null
+    supersedes_file_path: null
+    change_justification: |
+      [Provide a concise explanation detailing why this change occurred.]
+  
+  hitl_authorization:
+    hitl_signatory_identity: "[HUMAN_NAME via INTERFACE_METHOD]"
+    tquery_reference: null

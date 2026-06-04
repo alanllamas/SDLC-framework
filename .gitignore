@@ -1,0 +1,14 @@
+# Git Butler Local Environment Configuration
+.butler.env
+
+# Local Environment Overrides (Development Plane Safety)
+.env*.local
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Editor artifacts
+.vscode/
+.idea/
+*.swp

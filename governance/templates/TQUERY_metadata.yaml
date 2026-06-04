@@ -1,0 +1,44 @@
+# ==============================================================================
+# ENGINE CORE: UNIFIED INTERACTIVE TQUERY TEMPLATE
+# Copied and populated by any agent experiencing a block, gap, or conflict.
+# Updated: resolution_owner field added per TQ_003 resolution.
+# ==============================================================================
+
+tquery:
+  id: "TQ_XXX"
+  trigger_type: "[KNOWLEDGE_GAP | SCOPE_DRIFT | CONFLICT_RESOLUTION]"
+  originating_agent: "[AGENT_ROLE]"
+  active_branch: "proposal/[DOC_ID]"
+  
+  context_bounds:
+    file_in_focus: "governance/[path/to/file.md]"
+    problem_statement: |
+      [Insert a concise, 1-2 sentence description of the block or gap in plain business terms.]
+  
+  actionable_options:
+    option_alpha: |
+      [Action Alpha description: Define the exact path and its immediate impact.]
+    option_beta: |
+      [Action Beta description: Define the alternative path and its immediate impact.]
+    option_custom: |
+      "Provide custom guidance, clear text overrides, or structural instructions here."
+
+  # ==========================================
+  # RESOLUTION OWNERSHIP
+  # ==========================================
+  resolution_owner:
+    agent_layer: "[Business Catalyst | PM Orchestrator | System Architect | Tech Lead | HITL]"
+    hitl_role: null       # Specific HITL role if agent_layer is HITL
+                          # e.g., "Tech Lead Human", "Business Owner"
+    hitl_signatory: null  # Registered name/identifier of the HITL if known
+                          # e.g., "Alan Llamas"
+    fallback: "HITL"      # Always HITL if agent_layer cannot be determined
+
+  # ==========================================
+  # HUMAN-IN-THE-LOOP RESOLUTION GATE
+  # ==========================================
+  hitl_decision:
+    selected_option: null
+    provided_input: null
+    timestamp: null
+    signatory_fingerprint: null

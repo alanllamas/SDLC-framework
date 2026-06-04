@@ -1,0 +1,33 @@
+# ==============================================================================
+# ENGINE CORE: UNIVERSAL METADATA SCHEMA (LOCKED)
+# Any changes to this file dynamically reconfigures the Librarian's audit engine.
+# ==============================================================================
+
+base_identity:
+  id: "string (REQUIRED)"               # e.g., BDR_012, BREQ_015, ADR_004
+  type: "string (REQUIRED)"             # BDR, BREQ, PRODUCT_SCOPE, ADR, TECH_SPEC
+  title: "string (REQUIRED)"            # Short descriptive name
+  status: "string (REQUIRED)"           # DRAFT, REVIEW, AUTHORIZED
+
+system_relationships:
+  vertical:
+    governing_bdr: "string (REQUIRED)"  # Ultimate strategic root anchor
+    parent_id: "string (NULLABLE)"      # Immediate structural parent
+  
+  horizontal:
+    depends_on: "array (OPTIONAL)"      # Sibling file IDs required before this one
+  
+  cross_plane:
+    architecture_adr: "array (OPTIONAL)" # Sideways links to system blueprints
+    technical_schema: "array (OPTIONAL)" # Sideways links to data specs/contracts
+  
+  history:
+    supersedes_document:
+      document_id: "string (NULLABLE)"   # Traceability link to the stale file
+      link_reason: "string (NULLABLE)"   # Explanation for the update/refactor
+
+provenance_ledger:
+  generation_layer:
+    agent_identity: "string (REQUIRED)" # Role name of the generating agent
+    timestamp: "string (REQUIRED)"      # ISO-8601 format timestamp
+  hitl_signatory: "string (NULLABLE)"   # Captured digital human fingerprint upon AUTHORIZED status
