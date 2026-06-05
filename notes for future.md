@@ -34,3 +34,13 @@ backlog management
 
 
 genera un anota en horizonte futuro de negocio por favor, la idea detras es si vale la pena que el sistema ayude a mantener tambien los archivos de toda la empresa en un sistema de version de control tipo git para darle trazabilidad a los archivos de todas las areas y que no se pueda perder nada y todo tenga evidencias
+
+
+
+preguntar 
+
+tenemos trabajo pendiente con el pm con base en el trabajo que estamos ahciendo como arquitectos?
+
+
+
+este framework debe opder sevir a un dev (como ahora) par recibir un intent de negcio de un cliente y poderle presentar propuestas biene strucutradas (futuro)
