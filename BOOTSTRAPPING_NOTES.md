@@ -81,6 +81,58 @@ framework behavior.
 
 ---
 
+## Governance Rules to Follow During Bootstrapping
+
+### RULE_001 — Nomenclature Standard
+All artifact filenames must follow the framework's
+established naming convention:
+* Format: `[ARTIFACT_TYPE]_[NNN]_[snake_case_title].md`
+* Examples: `BDR_018_phase_1_governance_integrity_audit.md`
+* **Never use version suffixes** in filenames (e.g., `_v1`,
+  `_v2`). Version evolution uses the supersession protocol
+  per BDR_003 — each iteration gets a new sequential ID.
+* GIR iterations example:
+  ```
+  GIR_001_phase_1_governance_integrity_report.md
+  superseded_by: GIR_002_phase_1_governance_integrity_report.md
+  ```
+
+### RULE_002 — Future Horizon Placement
+Future Horizon items must never appear inside governance
+artifacts (BDRs, BREQs, ADRs, etc.). They belong
+exclusively in the Layer Index Document of the layer
+where they surfaced:
+* Business ideas → `governance/business/01_business_request.md`
+* Product ideas → `governance/product/01_product_baseline.md`
+* Architecture ideas → `governance/architecture/01_architecture_baseline.md`
+* Technical ideas → `governance/technical/01_technical_baseline.md`
+
+### RULE_003 — Template Required for Every New Artifact Type
+Every new artifact type defined in a BDR must have a
+corresponding template file in `/governance/templates/`
+before the first instance of that artifact is generated.
+The BDR may be sealed without the template, but the
+template must exist before the artifact type is used
+in practice. Current artifact types requiring templates:
+* ✅ BDR_XXX.md
+* ✅ BREQ_XXX.md
+* ✅ PDR_XXX.md
+* ✅ PREQ_XXX.md
+* ✅ ADR_XXX.md
+* ✅ AREQ_XXX.md
+* ✅ TDR_XXX.md (redefined — new template required)
+* ✅ TREQ_XXX.md
+* ✅ AER_XXX.md
+* ✅ CR_XXX.md
+* ✅ BPROP_XXX.md
+* ✅ DEV_TICKET_XXX.md
+* ✅ TEST_TICKET_XXX.md
+* ✅ TQUERY_XXX.md
+* ✅ GIR_XXX.md (new — template generated this cycle)
+* ⚠️ TECH_DOC_template.md (exists but verify against Agent 7 mandate)
+
+---
+
 ## Delivery Protocol (Current)
 
 At the end of each agent cycle:
@@ -95,9 +147,7 @@ At the end of each agent cycle:
 
 ## File Location
 This file lives in the repository root alongside
-README.md and SYSTEM_REGISTRY.md. It is visible
-to anyone opening the repo and signals that the
-framework is in manual bootstrapping mode.
+README.md and SYSTEM_REGISTRY.md.
 
 ---
 
@@ -106,7 +156,61 @@ framework is in manual bootstrapping mode.
   task breakdown per architecture decision.
 * ADRs 003, 004, 006 deferred — require implementation
   context from Tech Lead.
-* ADR_005 in DRAFT — pending TQ_007 resolution by
-  Tech Lead.
-* TQ_008 — Governance Integrity Audit — pending
-  Business Catalyst resolution.
+* ADR_005 in DRAFT — pending TQ_007 resolution by Tech Lead.
+* TDR template needs to be updated — redefined from
+  Technical Determination Record to Technical Decision
+  Record per TQ_009.
+* BDR_019 ingestion compliance declarations need to be
+  added to layer index documents at each transition.
+
+### RULE_004 — Never Break the Process Mid-Execution
+Any governance process that has been initiated must be
+completed before generating new artifacts or switching
+to a different task. This applies to:
+* Ingestion Compliance Checks (BDR_019) — must complete
+  all three steps and generate the declaration before
+  any new artifact generation begins.
+* Governance Integrity Audits (BDR_018) — must complete
+  all five planes and generate the GIR before Phase 2
+  is authorized.
+* TQUERY resolution cycles — must be fully resolved
+  before the frozen branch resumes.
+* Agent role transitions — must complete the cooling-off
+  gate before the new role activates.
+
+**Rationale:** Incomplete processes leave the governance
+state in an undefined condition — artifacts may be
+generated based on partial information, making the
+audit trail unreliable and corrections expensive.
+
+**If a process must be interrupted:** Document the
+exact state at interruption in the layer index document
+before stopping. Resume from that exact state in the
+next session — never restart from scratch.
+
+### RULE_005 — DRAFT vs AUTHORIZED Lifecycle
+Documents follow a natural evolution cycle before
+becoming immutable:
+
+* **DRAFT state:** The document is a work in progress.
+  It may be freely modified, replaced, or discarded
+  without supersession, rollback, or audit trail entry.
+  No immutability applies. A DRAFT is never archived
+  to rollbacks — it either evolves to AUTHORIZED or
+  is simply discarded.
+* **AUTHORIZED state:** The document is immutable.
+  Any change requires a new document that supersedes
+  the authorized one per BDR_003 and BDR_008. The
+  authorized document is never modified in place —
+  it moves to rollbacks and the new document takes
+  its place in the active governance plane.
+* **The transition moment:** When the HITL signs off
+  on a DRAFT, it becomes AUTHORIZED. From that moment
+  forward, immutability applies.
+
+**Practical implication during bootstrapping:**
+If a DRAFT document needs to be updated before the
+HITL signs off, simply update it in place — no
+supersession, no rollback, no TQUERY required.
+Only post-authorization changes trigger the full
+supersession protocol.
