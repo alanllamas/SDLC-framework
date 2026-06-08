@@ -1,0 +1,26 @@
+tquery:
+  id: "TQ_011"
+  trigger_type: "SCOPE_DRIFT"
+  originating_agent: "System Architect"
+  active_branch: "proposal/BDR-019-supersession"
+  context_bounds:
+    file_in_focus: "governance/business/BDRs/BDR_019_ingestion_compliance_protocol.md"
+    problem_statement: >
+      BDR_019 Coverage Check does not mandate explicit Skip Declaration when
+      artifact intentionally has no downstream descendant. Silence indistinguishable
+      from oversight.
+  resolution_owner:
+    agent_layer: "Business Catalyst"
+    hitl_role: null
+    hitl_signatory: null
+    fallback: "HITL"
+  actionable_options:
+    option_alpha: "Supersede BDR_019 adding Skip Declaration mandate and propagation rule."
+    option_beta: "Add Skip Declaration as new BREQ extending BDR_019."
+    option_custom: null
+  hitl_decision:
+    selected_option: "alpha"
+    provided_input: "Skips must propagate downstream and be flagged by BDR_018 if unresolved."
+    timestamp: "2026-06-03T00:00:00Z"
+    signatory_fingerprint: "Alan Llamas via Console Approval"
+    resolution_artifact: "governance/business/BDRs/BDR_020_ingestion_compliance_protocol.md"

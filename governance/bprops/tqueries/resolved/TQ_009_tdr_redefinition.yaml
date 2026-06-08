@@ -1,0 +1,25 @@
+tquery:
+  id: "TQ_009"
+  trigger_type: "SCOPE_DRIFT"
+  originating_agent: "Business Catalyst"
+  active_branch: "proposal/TDR-redefinition"
+  context_bounds:
+    file_in_focus: "governance/templates/TDR_XXX.md"
+    problem_statement: >
+      TDR as Technical Determination Record is redundant with ADR+AREQ.
+      Tech Lead lacks formal artifact for implementation decisions.
+  resolution_owner:
+    agent_layer: "Business Catalyst"
+    hitl_role: null
+    hitl_signatory: null
+    fallback: "HITL"
+  actionable_options:
+    option_alpha: "Supersede TDR_XXX.md redefining as Technical Decision Record owned by Tech Lead."
+    option_beta: "Create new artifact type leaving TDR as-is."
+    option_custom: null
+  hitl_decision:
+    selected_option: "alpha"
+    provided_input: null
+    timestamp: "2026-06-03T00:00:00Z"
+    signatory_fingerprint: "Alan Llamas via Console Approval"
+    resolution_artifact: "governance/templates/TDR_XXX.md"

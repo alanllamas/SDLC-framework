@@ -1,0 +1,25 @@
+tquery:
+  id: "TQ_007"
+  trigger_type: "KNOWLEDGE_GAP"
+  originating_agent: "System Architect"
+  active_branch: "proposal/ADR-005"
+  context_bounds:
+    file_in_focus: "governance/architecture/ADRs/ADR_005_project_registry_implementation.md"
+    problem_statement: >
+      Project Registry physical location undefined. Three options evaluated,
+      none selected without implementation context.
+  resolution_owner:
+    agent_layer: "Tech Lead"
+    hitl_role: null
+    hitl_signatory: null
+    fallback: "HITL"
+  actionable_options:
+    option_alpha: "~/.sdlc/project_registry.md — operator home directory."
+    option_beta: "File in framework repository as active infrastructure."
+    option_custom: "Tech Lead proposes alternative."
+  hitl_decision:
+    selected_option: "alpha"
+    provided_input: "~/.sdlc/ unified directory resolving both registry and operator profile."
+    timestamp: "2026-06-03T00:00:00Z"
+    signatory_fingerprint: "Alan Llamas via Console Approval"
+    resolution_artifact: "governance/architecture/ADRs/ADR_005_project_registry_and_operator_profile_implementation.md"

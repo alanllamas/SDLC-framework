@@ -3,7 +3,7 @@ extends_schema: "/governance/templates/master_metadata.yaml"
 id: BREQ_022
 type: BREQ
 title: "Lifecycle Compliance Gatekeeper Mandate (Agent 9)"
-status: REVIEW
+status: AUTHORIZED
 relationships:
   vertical:
     governing_bdr: BDR_011

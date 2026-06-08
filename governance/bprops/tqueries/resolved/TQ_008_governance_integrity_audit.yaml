@@ -1,0 +1,24 @@
+tquery:
+  id: "TQ_008"
+  trigger_type: "KNOWLEDGE_GAP"
+  originating_agent: "System Architect"
+  active_branch: "proposal/governance-integrity-audit"
+  context_bounds:
+    file_in_focus: "governance/business/BDRs/"
+    problem_statement: >
+      No formal process to audit complete planning stack before Phase 2.
+  resolution_owner:
+    agent_layer: "Business Catalyst"
+    hitl_role: null
+    hitl_signatory: null
+    fallback: "HITL"
+  actionable_options:
+    option_alpha: "New BDR establishing single complete audit after Tech Lead."
+    option_beta: "Embed audit checklists in existing agent mandates."
+    option_custom: null
+  hitl_decision:
+    selected_option: "custom"
+    provided_input: "Single complete audit after Tech Lead before Phase 2. Most efficient approach."
+    timestamp: "2026-06-03T00:00:00Z"
+    signatory_fingerprint: "Alan Llamas via Console Approval"
+    resolution_artifact: "governance/business/BDRs/BDR_018_phase_1_governance_integrity_audit.md"

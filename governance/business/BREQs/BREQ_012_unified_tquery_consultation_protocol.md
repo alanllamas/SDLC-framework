@@ -3,7 +3,7 @@ extends_schema: "/governance/templates/master_metadata.yaml"
 id: BREQ_012
 type: BREQ
 title: "The Unified TQUERY & Consultation Protocol"
-status: REVIEW
+status: AUTHORIZED
 relationships:
   vertical:
     governing_bdr: BDR_010
@@ -20,7 +20,7 @@ relationships:
 
 provenance_ledger:
   generation_layer: { agent_identity: "Business Catalyst", timestamp: "2026-06-01T06:30:00Z" }
-  hitl_signatory: null
+  hitl_signatory: "Alan Llamas via Console Approval"
 ---
 
 # BREQ_012: The Unified TQUERY & Consultation Protocol

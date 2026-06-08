@@ -3,7 +3,7 @@ extends_schema: "/governance/templates/master_metadata.yaml"
 id: BREQ_021
 type: BREQ
 title: "Product Delivery Translator Mandate (Agent 8)"
-status: REVIEW
+status: AUTHORIZED
 relationships:
   vertical:
     governing_bdr: BDR_011

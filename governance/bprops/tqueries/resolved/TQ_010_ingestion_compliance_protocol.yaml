@@ -1,0 +1,25 @@
+tquery:
+  id: "TQ_010"
+  trigger_type: "KNOWLEDGE_GAP"
+  originating_agent: "Business Catalyst"
+  active_branch: "proposal/ingestion-compliance-protocol"
+  context_bounds:
+    file_in_focus: "governance/business/BDRs/"
+    problem_statement: >
+      Framework lacks formal mandate requiring receiving agents to validate
+      incoming artifacts before generating their own.
+  resolution_owner:
+    agent_layer: "Business Catalyst"
+    hitl_role: null
+    hitl_signatory: null
+    fallback: "HITL"
+  actionable_options:
+    option_alpha: "New BDR establishing transversal Ingestion Compliance Protocol."
+    option_beta: "Supersede individual agent mandate BREQs."
+    option_custom: null
+  hitl_decision:
+    selected_option: "alpha"
+    provided_input: null
+    timestamp: "2026-06-03T00:00:00Z"
+    signatory_fingerprint: "Alan Llamas via Console Approval"
+    resolution_artifact: "governance/business/BDRs/BDR_019_ingestion_compliance_protocol.md"

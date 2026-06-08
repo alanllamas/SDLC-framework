@@ -3,7 +3,7 @@ id: BREQ_008
 type: Business Requirement
 governing_bdr: BDR_002
 source_agent: Agent 1 (Business Catalyst)
-status: DRAFT
+status: AUTHORIZED
 ---
 # Business Requirement: BREQ_008 — Tech Lead Operational Mandate & Execution Gateways
 
