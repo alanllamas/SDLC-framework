@@ -3,7 +3,7 @@ tquery:
   trigger_type: "SCOPE_DRIFT"
   originating_agent: "Tech Lead"
   active_branch: "proposal/technical-layer-v1"
-  
+
   context_bounds:
     file_in_focus: "governance/product/PDRs/PRD_001_product_roadmap_sdlc_governance_framework.md"
     problem_statement: >
@@ -32,7 +32,7 @@ tquery:
     hitl_role: null
     hitl_signatory: null
     fallback: "HITL"
-  
+
   actionable_options:
     option_alpha: >
       PM Orchestrator inserts a new milestone for Brownfield
@@ -48,7 +48,17 @@ tquery:
       dependency analysis.
 
   hitl_decision:
-    selected_option: null
-    provided_input: null
-    timestamp: null
-    signatory_fingerprint: null
+    selected_option: "alpha"
+    provided_input: >
+      New milestone v0.13.0 inserted as the final milestone of the
+      v1.0.0 sequence (after v0.12.0). Governed by existing PDR_001
+      (no new PDR needed) — PREQ_007 generated defining the Path D
+      flow. No hard dependency on Agent 7 (v0.10.0) — lightweight
+      one-time scan, distinct from ongoing chronicling. Single-repo
+      only; multi-repo deferred per architecture Future Horizon.
+      Architecture/Technical specification (ADR/TDR/TREQ/DEV/TEST)
+      explicitly DEFERRED to a future Tech Lead cycle — Skip
+      Declaration recorded at Product layer per BDR_020.
+    timestamp: "2026-06-03T00:00:00Z"
+    signatory_fingerprint: "Alan Llamas via Console Approval"
+    resolution_artifact: "governance/product/PREQs/PREQ_007_brownfield_onboarding_and_project_analysis_flow.md"

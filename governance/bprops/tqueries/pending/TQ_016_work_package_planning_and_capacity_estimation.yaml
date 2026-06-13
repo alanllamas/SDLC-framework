@@ -3,6 +3,7 @@ tquery:
   trigger_type: "SCOPE_DRIFT"
   originating_agent: "Tech Lead"
   active_branch: "proposal/technical-layer-v1"
+  target_version: "v2.0.0"
 
   context_bounds:
     file_in_focus: "governance/product/PDRs/PRD_001_product_roadmap_sdlc_governance_framework.md"
@@ -32,6 +33,10 @@ tquery:
       Solo independent of the team-capacity question, and
       (3) how DEV_TICKET estimation fields (if any) should be
       introduced without disrupting the existing ticket schema.
+
+      NOTE (added per TREQ_043): target_version explicitly set
+      to v2.0.0 — this item is correctly deferred and will NOT
+      block v1.0.0 Phase 1 closure (Plane 4 classifies as GREEN).
 
   resolution_owner:
     agent_layer: "PM Orchestrator"
