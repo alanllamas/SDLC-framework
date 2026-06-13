@@ -22,9 +22,6 @@ provenance_ledger:
   hitl_signatory: "Alan Llamas via Console Approval"
 ---
 
-// TODO: checar la sugerencia u obligacion del log, que no hace autotrigger, 
-// TODO: revisar en donde se encuentra la carpeta /log
-
 # Technical Requirement: TREQ_032 — Commit Structure & Pull Request Creation
 
 ## 1. Intent & Scope
