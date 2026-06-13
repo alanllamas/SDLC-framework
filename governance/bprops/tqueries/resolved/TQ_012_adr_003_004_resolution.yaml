@@ -1,0 +1,25 @@
+tquery:
+  id: "TQ_012"
+  trigger_type: "KNOWLEDGE_GAP"
+  originating_agent: "Tech Lead"
+  active_branch: "proposal/technical-layer-v1"
+  context_bounds:
+    file_in_focus: "governance/architecture/01_architecture_baseline.md"
+    problem_statement: >
+      7 PREQs deferred pending ADR_003 and ADR_004. Architect deferred
+      stating they require Tech Lead implementation context.
+  resolution_owner:
+    agent_layer: "System Architect"
+    hitl_role: null
+    hitl_signatory: null
+    fallback: "HITL"
+  actionable_options:
+    option_alpha: "Architect generates ADR_003/004 now with Tech Lead context."
+    option_beta: "Tech Lead generates non-deferred breakdown first, ADRs emerge later."
+    option_custom: null
+  hitl_decision:
+    selected_option: "alpha"
+    provided_input: null
+    timestamp: "2026-06-03T00:00:00Z"
+    signatory_fingerprint: "Alan Llamas via Console Approval"
+    resolution_artifact: "governance/architecture/ADRs/ADR_003_agent_orchestration_model.md, governance/architecture/ADRs/ADR_004_governance_state_machine.md"

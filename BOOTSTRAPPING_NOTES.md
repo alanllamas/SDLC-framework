@@ -214,3 +214,23 @@ HITL signs off, simply update it in place — no
 supersession, no rollback, no TQUERY required.
 Only post-authorization changes trigger the full
 supersession protocol.
+
+### RULE_006 — ZIP Naming Convention by Version/Milestone
+Every cycle ZIP delivered to the HITL must be named after
+the version or milestone being worked on, to keep downloads
+organized chronologically.
+
+**Naming pattern:** `sdlc-[milestone_id].zip`
+
+Examples:
+* `sdlc-v0.1.0.zip` — Bootstrap & Session Gateway cycle
+* `sdlc-v0.2.0.zip` — Agent Role Activation & Transitions cycle
+* `sdlc-v0.8.0-mvp.zip` — MVP milestone cycle
+
+If a cycle spans business/architecture work not yet tied to
+a specific milestone (e.g., foundational ADRs before v0.1.0
+breakdown), use a descriptive name instead:
+* `sdlc-foundations.zip`
+* `sdlc-arch-layer.zip`
+
+This rule applies going forward — past ZIPs are not renamed.

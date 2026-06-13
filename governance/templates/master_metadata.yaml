@@ -1,33 +1,40 @@
 # ==============================================================================
 # ENGINE CORE: UNIVERSAL METADATA SCHEMA (LOCKED)
 # Any changes to this file dynamically reconfigures the Librarian's audit engine.
+# Updated: version_tag field added per BREQ_018.
 # ==============================================================================
 
 base_identity:
-  id: "string (REQUIRED)"               # e.g., BDR_012, BREQ_015, ADR_004
-  type: "string (REQUIRED)"             # BDR, BREQ, PRODUCT_SCOPE, ADR, TECH_SPEC
-  title: "string (REQUIRED)"            # Short descriptive name
+  id: "string (REQUIRED)"
+  type: "string (REQUIRED)"             # BDR, BREQ, PDR, PREQ, ADR, AREQ, TDR, TREQ, GIR, ICD, PRD
+  title: "string (REQUIRED)"
   status: "string (REQUIRED)"           # DRAFT, REVIEW, AUTHORIZED
+
+version_tag:
+  target_version: "string (OPTIONAL)"   # e.g., v1.0, v1.1, v2.0, v1.0+
+                                        # Omit for framework-wide governance artifacts
+  milestone: "string (OPTIONAL)"        # e.g., v0.1.0 — Session initialization complete
+                                        # References milestone in PRD_001
 
 system_relationships:
   vertical:
-    governing_bdr: "string (REQUIRED)"  # Ultimate strategic root anchor
-    parent_id: "string (NULLABLE)"      # Immediate structural parent
+    governing_bdr: "string (REQUIRED)"
+    parent_id: "string (NULLABLE)"
   
   horizontal:
-    depends_on: "array (OPTIONAL)"      # Sibling file IDs required before this one
+    depends_on: "array (OPTIONAL)"
   
   cross_plane:
-    architecture_adr: "array (OPTIONAL)" # Sideways links to system blueprints
-    technical_schema: "array (OPTIONAL)" # Sideways links to data specs/contracts
+    architecture_adr: "array (OPTIONAL)"
+    technical_schema: "array (OPTIONAL)"
   
   history:
     supersedes_document:
-      document_id: "string (NULLABLE)"   # Traceability link to the stale file
-      link_reason: "string (NULLABLE)"   # Explanation for the update/refactor
+      document_id: "string (NULLABLE)"
+      link_reason: "string (NULLABLE)"
 
 provenance_ledger:
   generation_layer:
-    agent_identity: "string (REQUIRED)" # Role name of the generating agent
-    timestamp: "string (REQUIRED)"      # ISO-8601 format timestamp
-  hitl_signatory: "string (NULLABLE)"   # Captured digital human fingerprint upon AUTHORIZED status
+    agent_identity: "string (REQUIRED)"
+    timestamp: "string (REQUIRED)"
+  hitl_signatory: "string (NULLABLE)"

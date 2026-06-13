@@ -7,10 +7,8 @@
 ---
 
 ## 1. Layer Mission
-The Product Layer translates authorized business requirements into atomic,
-user-facing product specifications. It defines how the platform behaves for
-the operator — never how it is built technically. It does not own commercial
-strategy, database schemas, or infrastructure decisions.
+The Product Layer translates authorized business requirements into
+atomic, user-facing product specifications.
 
 ---
 
@@ -19,6 +17,7 @@ strategy, database schemas, or infrastructure decisions.
 | ID | Title | Status |
 |:---|:------|:-------|
 | PDR_001 | Interaction Model & Operator Experience Mandate | AUTHORIZED |
+| PRD_001 | Product Roadmap: SDLC Governance Framework | LIVING — DRAFT (never sealed) |
 | PREQ_001 | Session Initialization & Operator Onboarding Flow | AUTHORIZED |
 | PREQ_002 | Agent Role Activation & Transition Flow | AUTHORIZED |
 | PREQ_003 | TQUERY Presentation & Resolution Flow | AUTHORIZED |
@@ -37,22 +36,24 @@ strategy, database schemas, or infrastructure decisions.
 ## 3. Accumulated Intelligence Ledger
 
 * **2026-06-03** — Primary operator v1.0: Developer Solo (Config 2).
-* **2026-06-03** — Interaction model conversational, platform-agnostic.
-* **2026-06-03** — Future Horizon per layer — never cross-modify other layers.
-* **2026-06-03** — Draft retention is explicit-rejection-only. Micro-commits as safety net.
-* **2026-06-03** — BREQs de mandato de agente no requieren PREQ — solo BREQs de protocolo.
-* **2026-06-03** — PDR_001 es GOVERNANCE_POLICY — no requiere ADR directo.
+* **2026-06-03** — BREQs de mandato de agente no requieren PREQ.
+* **2026-06-03** — PRD_001 establecido — roadmap v1.0 a v3.0 con
+  MVP declarado en v0.8.0.
+* **2026-06-03** — Phase 2 distribuida en minors separados:
+  v0.9.0 (execution), v0.10.0 (Agent 7), v0.11.0 (Agent 8),
+  v0.12.0 (Agent 9).
+* **2026-06-03** — GAP_009 (Developer Feedback Protocol) y GAP_010
+  (External Feedback) identificados — GAP_010 RESUELTO via TDR_005.
 
 ---
 
 ## 4. Future Horizon Ledger
-> Informal ideas. Not backlog. Not committed.
 
-* **Extended operator flow PREQs (v1.1)** — User-facing flows for each agent's
-  internal work: Business Catalyst elicitation flow, PM requirement mapping flow,
-  Architect evaluation flow, Tech Lead task breakdown flow.
-* **Meeting Intelligence Assistant** — Governance extended to meeting lifecycle.
-* **Multi-organization operator support** — Separate contexts per organization.
+* **Extended operator flow PREQs (v1.1)** — Per-agent internal
+  work cycle flows.
+* **Meeting Intelligence Assistant** — Governance extended to
+  meeting lifecycle.
+* **Multi-organization operator support**.
 
 ---
 
@@ -60,11 +61,11 @@ strategy, database schemas, or infrastructure decisions.
 
 * **Ingesting Agent:** PM Orchestrator
 * **Upstream Layer:** Business
-* **Artifacts Ingested:** 20 BREQs
-* **Completeness Check:** PASSED — all BREQs in AUTHORIZED or ACTIVE status.
+* **Artifacts Ingested:** 21 BREQs (incl. BREQ_018)
+* **Completeness Check:** PASSED
 * **Coverage Check:** PASSED WITH SKIPS
 
-### Skip Declarations (New This Layer)
+### Skip Declarations
 | Artifact ID | Title | Skip Reason | Reference |
 |:------------|:------|:------------|:----------|
 | BREQ_004 | PM Orchestrator Mandate | GOVERNANCE_POLICY | null |
@@ -72,11 +73,12 @@ strategy, database schemas, or infrastructure decisions.
 | BREQ_008 | Tech Lead Mandate | GOVERNANCE_POLICY | null |
 | BREQ_010 | Librarian Mandate | GOVERNANCE_POLICY | null |
 | BREQ_011 | Git Butler Mandate | GOVERNANCE_POLICY | null |
+| BREQ_018 | Product Roadmap Document Standard | COVERED_BY_SIBLING | PRD_001 |
 | BREQ_020 | Agent 7 Mandate | GOVERNANCE_POLICY | null |
 | BREQ_021 | Agent 8 Mandate | GOVERNANCE_POLICY | null |
 | BREQ_022 | Agent 9 Mandate | GOVERNANCE_POLICY | null |
 
-* **Conflict Pre-Scan:** PASSED — no contradictions detected.
+* **Conflict Pre-Scan:** PASSED
 * **Yellow Items:** NONE
 * **HITL Sign-off:** Alan Llamas via Console Approval — 2026-06-03
 
@@ -87,3 +89,4 @@ strategy, database schemas, or infrastructure decisions.
 | ID | Description | Resolution Owner | Status |
 |:---|:------------|:----------------|:-------|
 | TQ_002 | Delivery mechanism | System Architect | RESOLVED — ADR_002 |
+| TQ_013 | Product Roadmap artifact | Business Catalyst | RESOLVED — BREQ_018, PRD_001 |

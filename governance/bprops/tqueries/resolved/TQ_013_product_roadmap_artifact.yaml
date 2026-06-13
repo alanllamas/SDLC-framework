@@ -1,0 +1,25 @@
+tquery:
+  id: "TQ_013"
+  trigger_type: "KNOWLEDGE_GAP"
+  originating_agent: "System Architect"
+  active_branch: "proposal/ADR-003"
+  context_bounds:
+    file_in_focus: "governance/product/01_product_baseline.md"
+    problem_statement: >
+      No formal artifact documents the complete product roadmap —
+      versions, target users, scope per phase, planning gaps.
+  resolution_owner:
+    agent_layer: "Business Catalyst"
+    hitl_role: null
+    hitl_signatory: null
+    fallback: "HITL"
+  actionable_options:
+    option_alpha: "New artifact type PRD (Product Roadmap Document) established via BREQ."
+    option_beta: "Capture in Future Horizon Ledger without new artifact type."
+    option_custom: null
+  hitl_decision:
+    selected_option: "alpha"
+    provided_input: null
+    timestamp: "2026-06-03T00:00:00Z"
+    signatory_fingerprint: "Alan Llamas via Console Approval"
+    resolution_artifact: "governance/business/BREQs/BREQ_018_product_roadmap_document_standard.md, governance/product/PDRs/PRD_001_product_roadmap_sdlc_governance_framework.md"
