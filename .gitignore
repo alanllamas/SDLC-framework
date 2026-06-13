@@ -16,3 +16,5 @@ Thumbs.db
 # windows tracking files
 *.md:Zone.Identifier
 *.yaml:Zone.Identifier
+*.mdZone.Identifier
+*.yamlZone.Identifier
