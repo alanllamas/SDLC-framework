@@ -1,0 +1,61 @@
+tquery:
+  id: "TQ_016"
+  trigger_type: "SCOPE_DRIFT"
+  originating_agent: "Tech Lead"
+  active_branch: "proposal/technical-layer-v1"
+
+  context_bounds:
+    file_in_focus: "governance/product/PDRs/PRD_001_product_roadmap_sdlc_governance_framework.md"
+    problem_statement: >
+      HITL raised a question during v0.12.0 planning: should
+      each agent's work session begin by establishing its own
+      task checklist (a trackable "what does the operator/agent
+      need to do" artifact), and how should the framework
+      support estimation and capacity planning when work is
+      distributed across a team (relevant for v2.0.0 Config 1 —
+      Full Human Team, and Config 4 — Incomplete Team)?
+
+      For v1.0.0 Developer Solo, DEV_TICKETs already serve as
+      the atomic unit of trackable work — there is no team to
+      distribute work across, so a separate work-package layer
+      would add overhead without clear benefit.
+
+      For v2.0.0, this becomes more relevant: estimating
+      DEV_TICKETs, grouping them into work packages assignable
+      to different team members, and tracking capacity/velocity
+      over time (sprints or similar) is a natural extension of
+      PRD_001's "team profile templates" scope item.
+
+      PM Orchestrator should determine: (1) whether this is a
+      new PDR/PREQ chain for v2.0.0, (2) whether "session task
+      checklists" per agent are valuable even for v1.0 Developer
+      Solo independent of the team-capacity question, and
+      (3) how DEV_TICKET estimation fields (if any) should be
+      introduced without disrupting the existing ticket schema.
+
+  resolution_owner:
+    agent_layer: "PM Orchestrator"
+    hitl_role: null
+    hitl_signatory: null
+    fallback: "HITL"
+
+  actionable_options:
+    option_alpha: >
+      PM Orchestrator scopes this as a v2.0.0 PDR/PREQ chain —
+      Work Package Planning & Capacity Estimation — building on
+      DEV_TICKETs as the atomic unit, adding estimation fields
+      and team assignment/grouping for Config 1/4.
+    option_beta: >
+      PM Orchestrator separates the two concerns: "session task
+      checklists" evaluated as a lightweight v1.0 addition
+      (any version, low cost), while capacity/estimation remains
+      scoped to v2.0.0 as in Option Alpha.
+    option_custom: >
+      PM Orchestrator proposes alternative scoping based on
+      dependency analysis against v1.1.0/v2.0.0 roadmap.
+
+  hitl_decision:
+    selected_option: null
+    provided_input: null
+    timestamp: null
+    signatory_fingerprint: null
