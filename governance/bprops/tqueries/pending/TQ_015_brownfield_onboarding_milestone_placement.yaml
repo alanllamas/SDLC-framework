@@ -1,0 +1,54 @@
+tquery:
+  id: "TQ_015"
+  trigger_type: "SCOPE_DRIFT"
+  originating_agent: "Tech Lead"
+  active_branch: "proposal/technical-layer-v1"
+  
+  context_bounds:
+    file_in_focus: "governance/product/PDRs/PRD_001_product_roadmap_sdlc_governance_framework.md"
+    problem_statement: >
+      HITL identified a critical capability for v1.0.0 — Brownfield
+      Onboarding: the framework's ability to be installed on an
+      existing project, analyze the codebase, and use that analysis
+      to inform the Business Catalyst's elicitation flow. This is
+      considered priority for adoption since most external testers
+      will have existing projects rather than greenfield ones.
+      Initial concept: a "Path D" extending ADR_002 Path A, where
+      Git Butler offers codebase analysis before governance
+      initialization, producing a Project Analysis Report consumed
+      by Business Catalyst's first elicitation. Multi-repo context
+      (already noted in architecture Future Horizon) is acknowledged
+      as a related but separable concern — single-repo brownfield
+      can ship first.
+
+      This requires PM Orchestrator to determine: (1) where this
+      fits in the v1.0.0 milestone sequence, (2) whether it requires
+      new PDR/PREQ chain, (3) whether it depends on Agent 7
+      capabilities (currently v0.10.0) or can use a lighter-weight
+      analysis mechanism earlier.
+
+  resolution_owner:
+    agent_layer: "PM Orchestrator"
+    hitl_role: null
+    hitl_signatory: null
+    fallback: "HITL"
+  
+  actionable_options:
+    option_alpha: >
+      PM Orchestrator inserts a new milestone for Brownfield
+      Onboarding within the v1.0.0 sequence, generates governing
+      PDR and PREQ(s), and determines dependencies on existing
+      milestones (especially v0.1.0 Path A/C and v0.10.0 Agent 7).
+    option_beta: >
+      PM Orchestrator extends an existing milestone (e.g., v0.1.0
+      Bootstrap) to include a lightweight Path D, deferring full
+      codebase analysis depth to a later milestone or v1.1.0.
+    option_custom: >
+      PM Orchestrator proposes alternative placement based on
+      dependency analysis.
+
+  hitl_decision:
+    selected_option: null
+    provided_input: null
+    timestamp: null
+    signatory_fingerprint: null
