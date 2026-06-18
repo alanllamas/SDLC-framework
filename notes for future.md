@@ -54,4 +54,3 @@ que conceptos estamos tocando, podemos ocupar o impactan para la solucion
 
 valiedacion de decisiones, benchamrks, pocs antes de continaur proceso sucede entre techelead y arch
 
-VAMOS EN VERSION 0.12.0 REVISAR DESDE SDLC TQ RESOLUTION POSIBLEMENTE YA ESTE

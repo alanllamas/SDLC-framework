@@ -1,0 +1,114 @@
+bprop:
+  id: "BPROP_001"
+  originating_layer: "Technical"
+  originating_agent: "Tech Lead"
+  title: "Evidence-Driven Decision Validation & Versioned Project Ontology"
+
+  proposal_summary: >
+    Every governance decision at every layer (Business, Product,
+    Architecture, Technical) must be informed and validated against
+    external evidence at the moment it is made — not just internally
+    coherent. This evidence (benchmarks, published patterns, AI
+    evaluation harness results, PoCs, existing frameworks, academic
+    or industry references) is stored as a versioned, dated ontology
+    attached to the artifact that consumed it. When a process is
+    re-run, the framework checks if that evidence is still current
+    before reusing a prior decision — guaranteeing that re-planning
+    produces updated, evidence-backed decisions while no-replanning
+    guarantees deterministic reproduction of the same system.
+    Additionally, the HITL can inject ontology entries manually at
+    any step and in any layer — capturing domain knowledge, business
+    constraints, or proprietary experience that automated evidence
+    collection cannot surface.
+
+  rationale: >
+    Currently the framework produces internally consistent plans
+    but none of the decisions cite external evidence. A Tech Lead
+    TDR choosing a dependency graph approach is coherent but
+    unvalidated — no benchmark, no prior art reference, no PoC
+    result. This creates two risks: (1) we may be reinventing
+    existing solutions (AI evaluation harnesses like PromptFoo,
+    DeepEval, LangSmith, Braintrust were raised as a concrete
+    example — our MockLLMAdapter partially reinvents what these
+    already solve for behavioral validation of LLM agents), and
+    (2) a plan built today with today's evidence could be silently
+    stale in 2 years if re-run without replanning.
+
+    The ontology solves both: it is the evidence repository that
+    makes every decision traceable to external reality, versionable
+    over time, and queryable before reuse. Crucially, determinism
+    is preserved — if no replanning occurs, the ontology entries
+    for prior decisions are treated as fixed inputs and the same
+    output is produced every time. Replanning triggers
+    re-validation of those entries against current sources, and
+    only if evidence has changed does the framework propose
+    updating the decision (via TQUERY/BPROP flow, not silently).
+
+    The HITL injection capability ensures the ontology captures
+    knowledge that no automated search will find: domain expertise,
+    regulatory constraints, proprietary agreements, lessons from
+    prior failed projects — all timestamped and attributed to the
+    HITL as the source.
+
+  enrichment_chain: []
+
+  adjudication: null
+
+  technical_notes: >
+    Concrete scope items for upstream layers to evaluate:
+
+    1. ONTOLOGY STRUCTURE — Each entry is a versioned, dated node:
+       { concept, captured_date, sources[], informs_artifacts[],
+         confidence, stale_after_months, injected_by: "agent"|"HITL" }
+       Stored in governance/ontology/[layer]/[slug].yaml per project.
+       Part of the distributed package (ontology is project-specific,
+       not framework-meta — it travels with the user's project).
+
+    2. EVIDENCE COLLECTION PER LAYER — Each agent queries for
+       evidence before finalizing a decision:
+       - Business Catalyst: market benchmarks, comparable business
+         models, regulatory precedents.
+       - PM Orchestrator: product patterns, roadmap precedents,
+         existing frameworks solving similar problems.
+       - System Architect: published ADRs, academic papers,
+         established architectural patterns, PoC results.
+       - Tech Lead: existing libraries/tools (before building),
+         benchmarks, AI evaluation harnesses (PromptFoo, DeepEval,
+         LangSmith, Braintrust, RAGAS) for LLM-behavioral validation
+         specifically — not reinventing what these already solve.
+
+    3. HITL INJECTION — Available at every step, every layer.
+       Operator can inject an ontology entry at any moment via
+       /ontology add [layer] [concept] [source] command. Injected
+       entries are attributed to HITL (not agent) and carry equal
+       weight in decision validation. This captures domain knowledge,
+       proprietary constraints, and experience no automated search
+       surfaces.
+
+    4. DETERMINISM GUARANTEE — Two modes:
+       a) No-replanning: ontology entries for prior decisions are
+          fixed inputs. Same plan + same ontology = same system,
+          always. Zero non-determinism.
+       b) Replanning: framework checks stale_after_months per entry.
+          Stale entries trigger re-validation (agent searches for
+          current evidence). Only decisions whose evidence has
+          materially changed are proposed for update — via normal
+          TQUERY/BPROP flow, never silently.
+
+    5. AI HARNESS INTEGRATION — PromptFoo / DeepEval / Braintrust
+       (or similar, evaluated via the ontology's own evidence
+       process before adoption) would cover behavioral validation
+       of agent prompts — replacing the current "Integration:
+       verify agent produces X given Y" TEST_TICKETs that rely on
+       human review. This is distinct from pytest (infrastructure)
+       and complementary to it.
+
+    6. SCOPE RECOMMENDATION FOR UPSTREAM LAYERS —
+       Tech Lead proposes: v2.0.0 for ontology structure + HITL
+       injection + per-layer evidence collection hooks.
+       v3.0.0 (Enterprise) for full stale-detection + replanning
+       trigger + AI harness integration as a first-class pipeline
+       component. But upstream layers may reprioritize — the PoC
+       validation pattern (collect evidence before decisions) could
+       be introduced as a lightweight v1.1.0 addition without the
+       full ontology storage infrastructure.
