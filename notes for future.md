@@ -44,3 +44,14 @@ tenemos trabajo pendiente con el pm con base en el trabajo que estamos ahciendo 
 
 
 este framework debe opder sevir a un dev (como ahora) par recibir un intent de negcio de un cliente y poderle presentar propuestas biene strucutradas (futuro)
+
+necesitamos un procesod e benchmark y separar las decisiones abstractas de las decisiones tecnologicas para hacer agnostica la planeacion del resutlado y que se pueda replicar en multiples ocasiones y formas el mismo producto
+
+necesitamos validar las ideas antes de generar decisiones con bae en pruebas busquedas y acotar para hacer el minimo para las pruebas y asi validar para generar las decisiones de alto impacto, comenzar con decisiones pequenas y escalarlas, con base en esa inteligencia generar la ontologia del proyecto junto con lo que se le provea
+los nalisis deben ser con lo mas relevante al dia de hoy
+
+que conceptos estamos tocando, podemos ocupar o impactan para la solucion
+
+valiedacion de decisiones, benchamrks, pocs antes de continaur proceso sucede entre techelead y arch
+
+VAMOS EN VERSION 0.12.0 REVISAR DESDE SDLC TQ RESOLUTION POSIBLEMENTE YA ESTE

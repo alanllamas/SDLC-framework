@@ -1,6 +1,6 @@
 ---
 extends_schema: "/governance/templates/master_metadata.yaml"
-id: PREQ_007
+id: PREQ_011
 type: PREQ
 title: "Brownfield Onboarding & Project Analysis Flow (Path D)"
 status: AUTHORIZED
@@ -26,7 +26,7 @@ provenance_ledger:
   hitl_signatory: "Alan Llamas via Console Approval"
 ---
 
-# Product Requirement: PREQ_007 — Brownfield Onboarding & Project Analysis Flow (Path D)
+# Product Requirement: PREQ_011 — Brownfield Onboarding & Project Analysis Flow (Path D)
 
 ## 1. Intent & Scope
 Resolves TQ_015 (GAP_011) — Option Alpha selected. Defines the
