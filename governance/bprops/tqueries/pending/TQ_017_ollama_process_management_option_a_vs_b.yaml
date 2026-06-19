@@ -1,0 +1,70 @@
+tquery:
+  id: "TQ_017"
+  trigger_type: "ARCHITECTURAL_DECISION_REQUIRED"
+  originating_agent: "Tech Lead"
+  target_version: "v1.0.0"
+
+  context_bounds:
+    file_in_focus: "governance/technical/TREQs/TREQ_046_ollama_and_hybrid_llm_adapter.md"
+    problem_statement: >
+      TREQ_046 (OllamaAdapter) notifica al usuario cuando Ollama no está
+      corriendo y ofrece fallback a CLOUD. Pero el usuario debe levantar
+      Ollama manualmente — fricción que rompe el principio de PREQ_001
+      (experiencia de operador limpia).
+
+      Dos opciones identificadas:
+
+      OPCIÓN A — ProcessAdapter (Git Butler extiende capacidades de
+      system management):
+      Git Butler detecta si Ollama está corriendo via is_available(),
+      lo levanta con subprocess si no lo está, y lo supervisa durante
+      la sesión. Requiere nuevo ProcessAdapter ABC con
+      start_service(), stop_service(), is_running() methods.
+      Pros: experiencia zero-friction, el usuario nunca ve Ollama.
+      Contras: primer adapter con capacidad de ejecución de procesos
+      del OS — superficie de seguridad significativamente más amplia.
+      Un agente con ProcessAdapter tiene privilegios de ejecución
+      en la máquina del usuario. Requiere validación de Architect
+      (Loop 3 probable).
+
+      OPCIÓN B — Ollama como servicio del OS (systemd/launchd):
+      Durante el bootstrap inicial (Path A, ADR_002), el framework
+      configura Ollama como servicio del sistema operativo.
+      Una vez configurado, el OS lo levanta automáticamente.
+      El framework solo verifica disponibilidad, no gestiona el proceso.
+      Pros: menos código, menor superficie de ataque, más robusto,
+      delega gestión de procesos al OS que está diseñado para eso.
+      Contras: requiere paso adicional de configuración en bootstrap
+      (systemctl enable ollama / launchctl load), diferente por OS
+      (Linux vs macOS vs WSL), puede requerir permisos de sudo.
+
+      HITL intuición inicial: Opción A (mejor UX) pero reconoce que
+      Opción B es más segura. Se requiere análisis adversarial con
+      evidencia antes de decidir — particularmente sobre las
+      implicaciones de seguridad del ProcessAdapter y precedentes
+      en frameworks similares.
+
+  resolution_owner:
+    agent_layer: "System Architect"
+    hitl_role: "Final decision post-analysis"
+    fallback: "HITL"
+
+  actionable_options:
+    option_alpha: >
+      System Architect corre análisis adversarial (TREQ_045) sobre
+      ambas opciones: busca precedentes de ProcessAdapter en frameworks
+      similares, evalúa implicaciones de seguridad documentadas de
+      ejecución de procesos del OS desde agentes LLM, y benchmarks
+      de UX de configuración de servicios del OS vs zero-config.
+      Produce una recomendación con evidencia antes de que HITL decida.
+    option_beta: >
+      Tech Lead implementa Opción B directamente (más conservadora)
+      y deja Opción A como Future Horizon para v2.0 cuando el
+      Security layer del framework esté especificado (ver nota
+      estratégica de seguridad en BOOTSTRAPPING_NOTES).
+
+  hitl_decision:
+    selected_option: null
+    provided_input: null
+    timestamp: null
+    signatory_fingerprint: null
