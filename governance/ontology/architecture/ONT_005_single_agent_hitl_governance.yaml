@@ -1,0 +1,27 @@
+ontology_entry:
+  id: "ONT_005"
+  concept: "single-active-agent-hitl-governance-sequential-pipeline"
+  layer: "architecture"
+  captured_date: "2026-06-14"
+  injected_by: "agent"
+  confidence: "HIGH"
+  stale_after_months: 24
+  sources:
+    - id: "hitl-orchestration-2026"
+      type: "paper"
+      title: "HITL Orchestration for Agentic Use Cases — tiered design patterns"
+      url: "https://ijctjournal.org/wp-content/uploads/2026/04/Human-in-the-Loop-HITL-Orchestration-for-Agentic-Use-Cases.pdf"
+      year: 2026
+    - id: "ai2l-natarajan-2025"
+      type: "paper"
+      title: "AI-in-the-Loop: humans decide, AI assists"
+      year: 2025
+    - id: "eu-ai-act-article14"
+      type: "regulation"
+      title: "EU AI Act Article 14 — Human Oversight: context + authority + rationale"
+    - id: "amazon-bedrock-hitl"
+      type: "enterprise"
+      title: "Amazon Bedrock Agents — synchronous HITL approval gates"
+      year: 2025
+  informs_artifacts: ["ADR_003", "BDR_005", "TDR_006", "TREQ_012"]
+  finding: "CONFIRMS. EU AI Act Article 14 compliance is a competitive differentiator. Sequential single-agent correct for SDLC pipeline."

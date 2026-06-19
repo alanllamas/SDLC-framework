@@ -1,0 +1,24 @@
+ontology_entry:
+  id: "ONT_015"
+  concept: "llm-automated-ontology-construction-versioned-evidence"
+  layer: "technical"
+  captured_date: "2026-06-14"
+  injected_by: "agent"
+  confidence: "MEDIUM"
+  stale_after_months: 12
+  sources:
+    - id: "llm-ontology-construction-2026"
+      type: "paper"
+      title: "LLM-Driven Ontology Construction for Enterprise Knowledge Graphs — arxiv 2602.01276"
+      url: "https://arxiv.org/abs/2602.01276"
+      year: 2026
+    - id: "kg-2025-semanticarts"
+      type: "industry"
+      title: "Knowledge Graph 2025 — Gartner Slope of Enlightenment"
+      year: 2025
+    - id: "lightrag-2024"
+      type: "tool"
+      title: "LightRAG — KG-based retrieval, 10x token reduction vs GraphRAG"
+      year: 2024
+  informs_artifacts: ["BPROP_001"]
+  finding: "VALIDATES BPROP_001. LLMs can auto-construct ontology entries from governance artifacts, reducing HITL manual burden. KGs in Gartner Slope of Enlightenment — adoption timing correct."

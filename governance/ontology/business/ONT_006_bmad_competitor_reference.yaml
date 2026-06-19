@@ -1,0 +1,33 @@
+ontology_entry:
+  id: "ONT_006"
+  concept: "bmad-method-primary-competitor-reference"
+  layer: "business"
+  captured_date: "2026-06-14"
+  injected_by: "agent"
+  confidence: "HIGH"
+  stale_after_months: 3
+  sources:
+    - id: "bmad-method-github"
+      type: "open-source"
+      title: "BMAD-METHOD v6.6.0 — 49K GitHub stars, MIT license"
+      url: "https://github.com/bmad-code-org/BMAD-METHOD"
+      stars: 49000
+      year: 2026
+    - id: "bmad-gaps-issue-2003"
+      type: "community-analysis"
+      title: "Structural Gaps and Contradictions of BMAD v6 — GitHub Issue #2003"
+      url: "https://github.com/bmad-code-org/BMAD-METHOD/issues/2003"
+      year: 2026
+    - id: "marktechpost-sdd-2026"
+      type: "market-analysis"
+      title: "9 Best AI Tools for Spec-Driven Development in 2026"
+      url: "https://www.marktechpost.com/2026/05/08/9-best-ai-tools-for-spec-driven-development-in-2026-kiro-bmad-gsd-and-more-compare/"
+      year: 2026
+  informs_artifacts: ["BDR_001", "PDR_001", "ADR_001", "TDR_015"]
+  finding: >
+    BMAD is closest market equivalent (49K stars, validated by market).
+    Our differentiators: (1) formal artifact hierarchy with traceability,
+    (2) GIR_001 integrity audit (BMAD Issue #2003 documents this gap),
+    (3) Ingestion Compliance Protocol, (4) EU AI Act Article 14 HITL,
+    (5) multi-project Registry. Competitive positioning: BMAD + formal governance enforcement.
+  stale_note: "Check BMAD releases every 3 months — active development, v7 may ship features that close gaps."

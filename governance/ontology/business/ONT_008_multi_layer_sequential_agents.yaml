@@ -1,0 +1,26 @@
+ontology_entry:
+  id: "ONT_008"
+  concept: "multi-layer-specialized-agent-sequential-sdlc-handoff-artifacts"
+  layer: "business"
+  captured_date: "2026-06-14"
+  injected_by: "agent"
+  confidence: "HIGH"
+  stale_after_months: 18
+  sources:
+    - id: "metagpt-2023"
+      type: "paper"
+      title: "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework"
+      url: "https://arxiv.org/abs/2308.00352"
+      year: 2023
+    - id: "rtadev-acl2025"
+      type: "paper"
+      title: "RTADev: Intention Aligned Multi-Agent Framework for Software — ACL 2025"
+      url: "https://aclanthology.org/2025.findings-acl.80.pdf"
+      year: 2025
+    - id: "adlc-epam-2026"
+      type: "framework"
+      title: "ADLC: Agentic Development Lifecycle — human-agent responsibility mapping"
+      url: "https://www.epam.com/insights/ai/blogs/agentic-development-lifecycle-explained"
+      year: 2026
+  informs_artifacts: ["BDR_001", "PREQ_005", "TDR_014"]
+  finding: "CONFIRMS 4-layer hierarchy. RTADev ACL 2025 validates ICDs as solution to misalignment problem between sequential agents."

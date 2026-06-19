@@ -1,0 +1,34 @@
+ontology_entry:
+  id: "ONT_010"
+  concept: "spec-driven-development-2026-paradigm-convergence"
+  layer: "product"
+  captured_date: "2026-06-14"
+  injected_by: "agent"
+  confidence: "HIGH"
+  stale_after_months: 6
+  sources:
+    - id: "github-speckit-2026"
+      type: "open-source"
+      title: "GitHub Spec Kit v0.8.7 — 90K+ stars, SDD reference implementation"
+      url: "https://github.com/github/spec-kit"
+      stars: 90000
+      year: 2026
+    - id: "aws-kiro-2026"
+      type: "product"
+      title: "AWS Kiro — full IDE built around Specify→Plan→Execute workflow"
+      year: 2026
+    - id: "sdd-guide-2026"
+      type: "industry"
+      title: "Spec-Driven Development 2026 Definitive Guide"
+      url: "https://thebcms.com/blog/spec-driven-development"
+      year: 2026
+    - id: "haberlah-prds-ai-2026"
+      type: "analysis"
+      title: "How to write PRDs for AI Coding Agents — spec as programming interface"
+      year: 2026
+  informs_artifacts: ["PDR_001", "PREQ_001", "PREQ_002", "BDR_001"]
+  finding: >
+    Our framework IS an advanced SDD implementation with formal governance.
+    Key differentiator: GIR_001 + ICDs + Agents 7/8/9 close the spec-code sync gap
+    that all SDD tools (Spec Kit, Kiro, BMAD) explicitly document as their limitation.
+    Positioning: 'SDD + formal governance enforcement + regulatory compliance'.

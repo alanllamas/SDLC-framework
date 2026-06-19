@@ -1,0 +1,22 @@
+ontology_entry:
+  id: "ONT_007"
+  concept: "human-centric-ai-assisted-decision-model-ai2l"
+  layer: "business"
+  captured_date: "2026-06-14"
+  injected_by: "agent"
+  confidence: "HIGH"
+  stale_after_months: 24
+  sources:
+    - id: "ai2l-natarajan-2025"
+      type: "paper"
+      title: "AI-in-the-Loop: humans decide, AI assists — reframing HITL"
+      year: 2025
+    - id: "eu-ai-act-art14"
+      type: "regulation"
+      title: "EU AI Act Article 14 — Human Oversight required"
+    - id: "pwc-agentic-sdlc-2026"
+      type: "industry"
+      title: "PwC: governance + human-AI collaboration as core design principles"
+      year: 2026
+  informs_artifacts: ["BDR_005", "BDR_018", "ADR_003"]
+  finding: "CONFIRMS BDR_005. AI2L > HITL as conceptual framing. EU AI Act compliance is competitive differentiator for regulated markets."

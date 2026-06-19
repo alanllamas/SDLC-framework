@@ -1,0 +1,35 @@
+ontology_entry:
+  id: "ONT_014"
+  concept: "deepeval-pytest-plugin-agent-behavioral-testing"
+  layer: "technical"
+  captured_date: "2026-06-14"
+  injected_by: "agent"
+  confidence: "HIGH"
+  stale_after_months: 6
+  sources:
+    - id: "deepeval-v4-pytest"
+      type: "tool"
+      title: "DeepEval v4.0.3 — pytest-native plugin for LLM evaluation, MIT license"
+      url: "https://github.com/confident-ai/deepeval"
+    - id: "inspect-ai-ukaisc"
+      type: "tool"
+      title: "Inspect AI v0.3.225 — UK AI Security Institute open source eval framework"
+      url: "https://github.com/UKGovernmentBEIS/inspect_ai"
+    - id: "braintrust-2026"
+      type: "commercial-tool"
+      title: "Braintrust — CI/CD eval integration, $800M valuation"
+      year: 2026
+    - id: "inference-net-2026"
+      type: "analysis"
+      title: "LLM Evaluation Tools Complete Comparison 2026"
+      url: "https://inference.net/content/llm-evaluation-tools-comparison/"
+      year: 2026
+  informs_artifacts: ["TDR_022", "TREQ_039", "TREQ_040", "BPROP_001"]
+  critical_finding: >
+    DeepEval is a pytest PLUGIN, not a separate tool.
+    PytestRunnerAdapter (TREQ_039) automatically runs DeepEval evaluations
+    via normal pytest subprocess — no new TDR or adapter needed.
+    Add deepeval as test dependency. Create DEV_044/TEST_044 for
+    per-agent behavioral evaluation tests.
+    This closes BPROP_001's AI harness gap for v1.0 with minimal friction.
+  for_team_scale: "Braintrust for v2.0+ when team grows — CI/CD eval collaboration."
