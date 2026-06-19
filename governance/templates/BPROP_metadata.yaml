@@ -1,0 +1,21 @@
+# Template: BPROP_metadata.yaml
+# Formalizado per TDR_012, actualizado con target_version per TREQ_043
+# y uso observado en BPROP_001.
+
+bprop:
+  id: "BPROP_NNN"
+  originating_layer: "Technical|Architecture|Product|Business"
+  originating_agent: ""
+  target_version: null  # OPCIONAL — mismo principio que TQUERY (TREQ_043)
+
+  title: ""
+  proposal_summary: ""
+  rationale: ""
+  technical_notes: null  # opcional, detalle de implementación si aplica
+
+  enrichment_chain: []
+  # cada entrada: {layer, agent, notes, timestamp} — TREQ_023
+
+  adjudication: null
+  # cuando se resuelve: {decision: ACCEPT|DEFER|REJECT, rationale,
+  #                       resulting_artifact, timestamp, signatory}

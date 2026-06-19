@@ -1,0 +1,26 @@
+# Template: legal_context_scan.yaml
+# Capa 3 — Raw. Output de Fase 0.5 (BREQ_025).
+
+legal_context:
+  scan_date: "YYYY-MM-DD"
+  distribution_regions: []  # ej: ["EU", "MX", "US"]
+  industry_vertical: null   # ej: "health", "finance", "government"
+  applicable_frameworks:
+    - id: ""  # ej: "EU_AI_ACT", "GDPR", "HIPAA"
+      risk_classification: null  # MINIMAL|LIMITED|HIGH|UNACCEPTABLE
+      applicable_articles: []
+      implication: ""
+      hitl_action_required: false
+      action: null
+  ip_considerations:
+    ontology_sources_with_restricted_use:
+      - source_id: ""
+        license: ""
+        fair_use_assessment: ""
+        distribution_risk: "LOW|MEDIUM|HIGH"
+  professional_legal_review_required: false
+  review_priority: "N/A|BEFORE_PUBLIC_DISTRIBUTION|IMMEDIATE"
+  disclaimer: >
+    Este análisis es informativo, no constituye asesoría legal.
+    El HITL debe buscar asesoría legal profesional antes de
+    distribuir el framework en los territorios identificados.

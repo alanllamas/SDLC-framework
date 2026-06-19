@@ -1,0 +1,29 @@
+# Template: ONT_NNN_metadata.yaml
+# Capa 1 — Índice. NUNCA se inyecta en contexto de agente.
+# Generado en Fase 1-2, poblado por el agente investigador.
+
+ontology_entry:
+  id: "ONT_NNN"
+  concept: "slug-conceptual-en-ingles-kebab-case"
+  layer: "business|product|architecture|technical"
+  captured_date: "YYYY-MM-DD"
+  injected_by: "agent|hitl"
+  confidence: "HIGH|MEDIUM|LOW"
+  stale_after_months: 0  # int — define cuándo se dispara Fase 5
+  status: "DRAFT|AUTHORIZED|DEFERRED|SUPERSEDED"
+  protocol: "TREQ_045"
+  hitl_signatory: null  # se llena en Fase 3
+  history:
+    supersedes_document:
+      document_id: null
+      link_reason: null
+  informs_artifacts: []  # IDs de BDR/ADR/TDR/etc que esta entrada informa
+  legal_context_scan_id: null  # referencia a Capa 3 si Fase 0.5 se ejecutó
+  sources:
+    - id: "source-slug"
+      type: "paper|open-source|industry|government|community-analysis|tool"
+      title: ""
+      url_original: ""
+      url_archived: null  # poblado por Wayback Machine archiving
+      archived_date: null
+      year: 0

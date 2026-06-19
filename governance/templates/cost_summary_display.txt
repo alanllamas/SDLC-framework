@@ -1,0 +1,12 @@
+# Template: cost_summary_display.txt
+# Formato de salida del comando /cost — per TREQ_047
+
+⚡ Operación CLOUD: [tipo de operación]
+   Input estimado:  [N] tokens  (~$X.XXX)
+   Output estimado: ~[N] tokens (~$X.XXX)
+   ─────────────────────────────────────
+   Total estimado:  ~$X.XXX
+   Acumulado sesión:   $X.XX  de $[budget_sesion] configurado
+   Acumulado proyecto: $X.XX  de $[budget_proyecto] configurado
+   ─────────────────────────────────────
+   ¿Continuar?  [Y] Cloud  [L] Local  [N] Cancelar
